@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node-docker-app
+  namespace: node-docker-app
   labels:
     app: node-docker-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: node-docker-app
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: node-docker-app
-          image: your-dockerhub-username/node-docker-app:latest # placeholder
+          image: nileshpawar0212/node-docker-app:latest # placeholder
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
