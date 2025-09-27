@@ -36,6 +36,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
                     sh 'kubectl get namespace node-docker-app >/dev/null 2>&1 || kubectl create namespace node-docker-app'
                     sh 'kubectl apply -f k8s/'
+                    sh 'kubectl rollout restart deployment -n node-docker-app node-docker-app'
                     sh 'kubectl get po -n node-docker-app'
                 }
             }

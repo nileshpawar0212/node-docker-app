@@ -19,7 +19,7 @@ spec:
       - name: dockerhub-secret
       containers:
         - name: node-docker-app
-          image: nileshpawar0212/node-docker-app:latest # placeholder
+          image: nileshpawar0212/node-docker-app:30 # placeholder
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
